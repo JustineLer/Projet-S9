@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="include">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="src">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="private">
+      <UniqueIdentifier>{5fc46352-a395-4df8-bcc0-cdc1862b1566}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\fault_estimation.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\util.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\convolution_separable_3d.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\eigen.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\img_utils.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\chronos.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\signal.c">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="private\attLibraryMain.c">
+      <Filter>private</Filter>
+    </ClCompile>
+    <ClCompile Include="private\callback.c">
+      <Filter>private</Filter>
+    </ClCompile>
+    <ClCompile Include="src\attLibraryRun.c">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="private\callback.h">
+      <Filter>private</Filter>
+    </ClInclude>
+    <ClInclude Include="private\callback_prev.h">
+      <Filter>private</Filter>
+    </ClInclude>
+    <ClInclude Include="include\chronos.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\config.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\convolution_separable_3d.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\eigen.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\fault_estimation.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\img_utils.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\signal.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\util.h">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
