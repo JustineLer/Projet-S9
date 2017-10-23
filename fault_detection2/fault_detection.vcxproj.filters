@@ -70,5 +70,13 @@
     <ClInclude Include="include\util.h">
       <Filter>include</Filter>
     </ClInclude>
+    <ClInclude Include="include\gradient_GPU.cuh">
+      <Filter>include</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="src\gradient_GPU.cu">
+      <Filter>src</Filter>
+    </CudaCompile>
   </ItemGroup>
 </Project>

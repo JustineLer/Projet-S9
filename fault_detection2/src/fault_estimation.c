@@ -12,6 +12,7 @@
 #include <fault_estimation.h>
 #include <util.h>
 #include <img_utils.h>
+#include <gradient_GPU.cuh>
 
 
 static long gaussian_size(double sigma)
@@ -612,8 +613,10 @@ void fault_estimation_run(void * fault_estimation, float * data)
   gx = (float*)calloc(size, sizeof(float));
   gy = (float*)calloc(size, sizeof(float));
   gz = (float*)calloc(size, sizeof(float));
-  gradiend3d(tmp, block->block_size0[0], block->block_size0[1], block->block_size0[2],
-             block->mask_grad_lp, block->mask_grad_hp, block->mask_grad_size, gx, gy, gz);
+  gradient_gpu_main(tmp, block->block_size0[0], block->block_size0[1], block->block_size0[2],
+	  block->mask_grad_lp, block->mask_grad_hp, block->mask_grad_size, gx, gy, gz);
+  //gradiend3d(tmp, block->block_size0[0], block->block_size0[1], block->block_size0[2],
+             //block->mask_grad_lp, block->mask_grad_hp, block->mask_grad_size, gx, gy, gz);
   fault_estimation_scale0_run(_fault_estimation, gx, gy, gz);
 	FREE(gx)
 	FREE(gy)

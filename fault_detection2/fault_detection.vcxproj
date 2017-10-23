@@ -52,6 +52,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
   <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 8.0.props" />
   </ImportGroup>
   <ImportGroup Label="Shared">
   </ImportGroup>
@@ -86,12 +87,12 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>.\include;.\private</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\include;.\private;$(CudaToolkitIncludeDir)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_MBCS;%(PreprocessorDefinitions);_CRT_SECURE_NO_WARNINGS;__ENABLE_CHRONOS__;__WINDOWS__;_MULTITHREAD_</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>./lib64</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies);cudart.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>./lib64;$(CudaToolkitLibDir)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -140,13 +141,18 @@
     <ClInclude Include="include\convolution_separable_3d.h" />
     <ClInclude Include="include\eigen.h" />
     <ClInclude Include="include\fault_estimation.h" />
+    <ClInclude Include="include\gradient_GPU.cuh" />
     <ClInclude Include="include\img_utils.h" />
     <ClInclude Include="include\signal.h" />
     <ClInclude Include="include\util.h" />
     <ClInclude Include="private\callback.h" />
     <ClInclude Include="private\callback_prev.h" />
   </ItemGroup>
+  <ItemGroup>
+    <CudaCompile Include="src\gradient_GPU.cu" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\CUDA 8.0.targets" />
   </ImportGroup>
 </Project>
